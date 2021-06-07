@@ -1,0 +1,19 @@
+<div class="input-div">
+    <div>
+        <label>Enter Matrix size:&nbsp;</label>
+        <label>No of Rows:&nbsp;</label>
+        <input type="number" [(ngModel)]="matrix.rowCount" (input)="onMatrixSizeChange()" class="number-input">
+        <label>No of Columns:&nbsp;</label>
+        <input type="number" [(ngModel)]="matrix.colCount" (input)="onMatrixSizeChange()" class="number-input">
+        <hr>
+        <ng-container>
+            <div *ngFor="let row of matrix.elements; index as rowidx">
+                <div *ngFor="let col of row; index as colidx" class="col-div">
+                    <input type="number" [(ngModel)]="matrix.elements[rowidx][colidx]" class="number-input">
+                </div>
+            </div>
+        </ng-container>
+        <hr>
+        <button (click)="computeEchelon()">Compute Echelon</button>
+    </div>
+</div>
