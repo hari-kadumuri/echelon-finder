@@ -1,5 +1,5 @@
 <div class="nav-bar"><button class="nav-bar-button" (click)="showEchelonFinderComp()">{{ showEchelonFinder ? 'Hide Echelon of a Matrix' : 'Show Echelon of a Matrix' }}</button></div>
 
-<div class="child-comp" *ngIf="showEchelonFinder">
+<div *ngIf="showEchelonFinder">
   <app-echelon-finder></app-echelon-finder>
 </div>

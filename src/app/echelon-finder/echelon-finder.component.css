@@ -8,3 +8,18 @@
     border-bottom: 2px solid rgb(25,118,210);
     padding: 5px;
 }
+
+.submit-div {
+    padding: 20px 0;
+    padding-left: 25%;
+}
+
+.input-div, .output-div {
+    border-radius: 5px;;
+    border-style: solid;
+    border-color: rgb(25,118,210);
+    border-width: 5px;
+    padding: 20px 0;
+    padding-left: 5%;
+    margin: 5px 0;
+}

@@ -13,7 +13,28 @@
                 </div>
             </div>
         </ng-container>
-        <hr>
-        <button (click)="computeEchelon()">Compute Echelon</button>
+        <div class="submit-div"><button (click)="computeEchelon()">Compute Echelon</button></div>
+
+        <div>
+            {{ matrix.elements | json }}
+        </div>
     </div>
+</div>
+
+<hr *ngIf="showOutputDiv">
+
+<div class="output-div" *ngIf="showOutputDiv">
+    <!-- <button style="float: right;">Delete output <i class="material-icons">delete</i></button> -->
+    <ng-container *ngFor="let currMatrix of outputMatrices; index as matrixidx" >
+        <div style="display: inline-block;">
+            <div *ngFor="let row of currMatrix.elements; index as rowidx">
+                <div *ngFor="let col of row; index as colidx" class="col-div">
+                    <input type="number" [(ngModel)]="currMatrix.elements[rowidx][colidx]" class="number-input">
+                </div>
+                <div style="display: inline-block;" *ngIf="matrixidx != outputMatrices.length-1 && rowidx == float2int(currMatrix.elements.length/2)">
+                    <div>-----------></div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
 </div>
